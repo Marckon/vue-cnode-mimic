@@ -55,7 +55,7 @@
 
 <style scoped>
   .page{
-    width:inherit;
+    width:100%;
     background-color: #fff;
     display: flex;
     cursor: default;

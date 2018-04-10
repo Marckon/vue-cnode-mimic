@@ -1,9 +1,11 @@
 <template>
-  <div id="app" ref="app">
+  <div id="app" >
     <cnode-header></cnode-header>
     <router-view></router-view>
     <cnode-footer></cnode-footer>
-    <scroll-top-btn v-show="currentScrollTop>10"></scroll-top-btn>
+    <transition name="fade">
+      <scroll-top-btn v-show="scrollY>20"></scroll-top-btn>
+    </transition>
   </div>
 </template>
 
@@ -19,26 +21,20 @@
       CnodeFooter,
       ScrollTopBtn,
     },
-    /*data: function () {
-      return {
-        appVm:''
-      }
-    },*/
-    computed:{
-      currentScrollTop(){
-        console.log(this.$refs.app)
-        if(this.$refs.app){
-          console.log(this.$refs.app.scrollTop)
-          return this.$refs.app.offsetTop
-        }else {
-          console.log('no-com')
-          return 0
-        }
+    data(){
+      return{
+        scrollY:window.scrollY
       }
     },
+    methods:{
+      scrollMethod(ev){
+        this.$data.scrollY=window.scrollY
+      }
+    },
+   computed:{
+   },
     mounted(){
-      this.data.appVm=this.$refs.app
-      console.log(this.$refs.app)
+      window.addEventListener('scroll',this.scrollMethod)
     }
   }
 </script>
@@ -48,7 +44,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 11pt;
+    font-size: 0.8vmax;
   }
 
   #app {
@@ -62,5 +58,11 @@
   body {
     background-color: #e1e1e1;
 
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 </style>

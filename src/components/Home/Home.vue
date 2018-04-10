@@ -1,16 +1,19 @@
 <template>
   <div class="home">
     <main-sector></main-sector>
+    <side-sector></side-sector>
   </div>
 </template>
 
 <script>
   import MainSector from './MainSector'
+  import SideSector from '../SideSector'
 
   export default {
     name: "home",
     components: {
-      MainSector
+      MainSector,
+      SideSector,
     },
     created(){
       let currentTab=this.$store.getters.getCurrentTab
@@ -34,8 +37,15 @@
 <style scoped>
 .home{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: start;
   padding-top: 20px;
+  width:80%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 980px) {
+  .home{
+    width:100%;
+  }
 }
 </style>

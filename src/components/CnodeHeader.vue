@@ -31,17 +31,16 @@
 
 <style>
   .header{
-    height:50px;
-    width:100%;
+    height:40px;
+    width:100vw;
     background-color: #444;
     display: flex;
     align-items: center;
     justify-content: space-around;
   }
   .tab-1{
-    width:400px;
+    width:20%;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }
@@ -57,7 +56,7 @@
     outline: none;
     border:none;
     text-indent: 30px;
-    width:250px;
+    width:100%;
     background-color: #888;
     transition: all linear 0.3s;
   }
@@ -81,5 +80,10 @@
   }
   .tabs a:hover{
     color:#fff;
+  }
+  @media screen and (max-width: 980px) {
+    .search{
+      display: none;
+    }
   }
 </style>

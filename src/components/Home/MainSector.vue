@@ -22,6 +22,11 @@
 
 <style scoped>
 .main-sector{
-  width:1100px;
+  width:80%;
+}
+@media screen and (max-width: 980px) {
+  .main-sector{
+    width:100%;
+  }
 }
 </style>

@@ -19,7 +19,7 @@
         </template>
       </div>
       <div class="title">
-        {{article.title}}
+        <router-link :to="{name:'topic',params:{artID:article.id}}">{{article.title}}</router-link>
       </div>
       <div class="last-reply-avatar">
         <img src="" alt="">
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+  import Util from '../../util/util'
   export default {
     name: "article-list",
     computed: {
@@ -68,36 +69,7 @@
         }
         return res;
       },
-      transferDate(dateStr){
-        let target=new Date(dateStr)
-        let now=new Date()
-        let diffYear=now.getFullYear()-target.getFullYear()
-        if(diffYear>0){
-          return diffYear+'年前'
-        }
-        let diffMonth=now.getMonth()-target.getMonth()
-        if(diffMonth>0){
-          return diffMonth+'月前'
-        }
-        let diffDate=now.getDate()-target.getDate()
-        if(diffDate>0){
-          return diffDate+'天前'
-        }
-        let diffHour=now.getHours()-target.getHours()
-        if(diffHour>0){
-          return diffHour+'小时前'
-        }
-        let diffMin=now.getMinutes()-target.getMinutes()
-        if(diffMin>0){
-          return diffMin+'分钟前'
-        }
-        let diffSec=now.getSeconds()-target.getSeconds()
-        if(diffSec>0){
-          return diffSec+'秒前'
-        }else{
-          return '刚刚'
-        }
-      }
+      transferDate:Util.Util.transferDate
     }
   }
 </script>
@@ -112,14 +84,22 @@
     align-items: center;
     justify-content: space-around;
     padding-left: 10px;
+    flex-wrap: nowrap;
   }
 
   .article-list-item:hover{
     background-color: #f6f6f6;
   }
-  .title:hover{
+  .title a{
+    text-decoration: none;
+    color:#000;
+  }
+  .title a:hover{
     text-decoration: underline;
     cursor: pointer;
+  }
+  .title a:visited{
+    color:#aaa;
   }
   .user-avatar {
     width: 30px;
@@ -141,6 +121,12 @@
     width: 80%;
     display: flex;
     justify-content: start;
+    align-items: center;
+    height:100%;
+    word-break: break-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .tab-tag {
@@ -148,6 +134,7 @@
     background-color: #e5e5e5;
     border-radius: 2px;
     width: 3%;
+    font-size: 0.8rem;
   }
 
   .top-tag {
@@ -160,5 +147,10 @@
     font-size: 0.5rem;
     color:#bbb;
     width:5%;
+  }
+  @media screen and (max-width: 980px) {
+    .tab-tag,.reply-collection,.last-reply-text{
+      display: none;
+    }
   }
 </style>
