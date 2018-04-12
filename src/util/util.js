@@ -29,7 +29,16 @@ const Util = {
       return '刚刚'
     }
   },
-  
+  transferTab: function (tabKey) {
+    let map = new Map([
+      ['all', '全部'],
+      ['share', '分享'],
+      ['job', '招聘'],
+      ['dev', '测试'],
+      ['ask', '问答'],
+    ])
+    return map.get(tabKey)
+  }
 }
 export default {
   Util

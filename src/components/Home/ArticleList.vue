@@ -45,28 +45,7 @@
     },
     methods: {
       tabToCh(tabKey) {
-        let res = ''
-        switch (tabKey) {
-          case 'all':
-            res = '全部';
-            break;
-          case 'share':
-            res = '分享';
-            break;
-          case 'job':
-            res = '招聘';
-            break;
-          case 'dev':
-            res = '测试';
-            break
-          case 'ask':
-            res = '问答';
-            break;
-          default:
-            res = '精华';
-            break
-        }
-        return res;
+        return this.$util.transferTab(tabKey)
       },
       transferDate(str){
         return this.$util.transferDate(str)

@@ -1,6 +1,7 @@
 <template>
   <div class="topic" ref="topic">
-    <article-content :currentArticle="currentArticle"></article-content>
+    <!--加上v-if防止报错-->
+    <article-content :currentArticle="currentArticle" v-if="currentArticle"></article-content>
     <side-sector></side-sector>
   </div>
 </template>

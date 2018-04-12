@@ -6,7 +6,7 @@
         <span>发布于 {{transferDate(currentArticle.create_at)}}</span>
         <span>作者 {{currentArticle.author.loginname}}</span>
         <span>{{currentArticle.visit_count}} 次浏览</span>
-        <span>来自 {{currentArticle.tab}}</span>
+        <span>来自 {{transferTab(currentArticle.tab)}}</span>
       </div>
     </div>
     <div v-html="currentArticle.content" class="content"></div>
@@ -24,8 +24,11 @@
     methods:{
       transferDate(str){
         return this.$util.transferDate(str)
+      },
+      transferTab(tabkey){
+        return this.$util.transferTab(tabkey)
       }
-    }
+    },
   }
 </script>
 
@@ -45,11 +48,13 @@
     flex-wrap: wrap;
     align-content: space-around;
     border-bottom: #ccc solid 1px;
+    padding-left: 20px;
   }
 
   .title h1 {
-    font-size: 1.8rem;
+    font-size: 1.8em;
     height:10px;
+    width:100%;
   }
   .content{
     width: 80%;
@@ -58,6 +63,9 @@
   }
   .content p{
    margin-top: 10px;
+  }
+  .article-info span:before{
+    content:'•';
   }
   @media screen and (max-width: 980px) {
     .article-content{
