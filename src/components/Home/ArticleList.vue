@@ -32,7 +32,6 @@
 </template>
 
 <script>
-  import Util from '../../util/util'
   export default {
     name: "article-list",
     computed: {
@@ -69,7 +68,9 @@
         }
         return res;
       },
-      transferDate:Util.Util.transferDate
+      transferDate(str){
+        return this.$util.transferDate(str)
+      }
     }
   }
 </script>

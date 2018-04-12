@@ -3,7 +3,10 @@
     <div class="title">
       <h1>{{currentArticle.title}}</h1>
       <div class="article-info">
-        <span>发布于</span>
+        <span>发布于 {{transferDate(currentArticle.create_at)}}</span>
+        <span>作者 {{currentArticle.author.loginname}}</span>
+        <span>{{currentArticle.visit_count}} 次浏览</span>
+        <span>来自 {{currentArticle.tab}}</span>
       </div>
     </div>
     <div v-html="currentArticle.content" class="content"></div>
@@ -16,6 +19,11 @@
     props: {
       currentArticle: {
         required: true
+      }
+    },
+    methods:{
+      transferDate(str){
+        return this.$util.transferDate(str)
       }
     }
   }

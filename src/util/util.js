@@ -28,9 +28,9 @@ const Util = {
     } else {
       return '刚刚'
     }
-  }
-
+  },
+  
 }
 export default {
-  Util: Util
+  Util
 }
