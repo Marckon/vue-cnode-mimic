@@ -32,15 +32,38 @@
   }
 </script>
 
-<style scoped>
+<style>
   .article-content{
     background-color: #fff;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
+    align-content: start;
   }
-  .title {
+  .article-content .content{
+    width: 80%;
+    margin:15px auto auto 15px;
+    text-align: left;
+  }
+  .article-content .content ol{
+    list-style-position: inside;
+  }
+  .article-content .content img{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 2em auto;
+  }
+  .article-content .content p{
+    line-height: 2em;
+  }
+  .article-content .content blockquote{
+    border-left: 5px solid #eee;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    color:#d1918f;
+  }
+  .article-content .title {
     height: 100px;
     width:100%;
     text-align: left;
@@ -51,20 +74,12 @@
     padding-left: 20px;
   }
 
-  .title h1 {
+  .article-content .title h1 {
     font-size: 1.8em;
     height:10px;
     width:100%;
   }
-  .content{
-    width: 80%;
-    margin-left: 5%;
-    text-align: left;
-  }
-  .content p{
-   margin-top: 10px;
-  }
-  .article-info span:before{
+  .article-content .article-info span:before{
     content:'•';
   }
   @media screen and (max-width: 980px) {

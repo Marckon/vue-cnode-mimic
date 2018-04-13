@@ -20,7 +20,7 @@
   position: relative;
 }
 .title{
-  background-color: #ccc;
+  background-color: #f6f6f6;
   height:15%;
   display: flex;
   align-items: center;

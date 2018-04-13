@@ -27,14 +27,27 @@
       }
     },
     methods:{
-      scrollMethod(ev){
+      scrollMethod(){
         this.$data.scrollY=window.scrollY
       }
     },
    computed:{
    },
     mounted(){
-      window.addEventListener('scroll',this.scrollMethod)
+      /*防止抖动：连续scroll短时间内触发过多次事件*/
+      function debounce(fn,delay) {
+        let timer=null
+        return function () {
+          let context=this
+          let args=arguments
+
+          clearTimeout(timer)
+          timer=setTimeout(function () {
+            fn.apply(context,args)
+          },delay)
+        }
+      }
+      window.addEventListener('scroll',debounce(this.scrollMethod,500))
     }
   }
 </script>
