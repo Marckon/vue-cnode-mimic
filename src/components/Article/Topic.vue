@@ -79,14 +79,12 @@
   }
   .topic .side-author .author-info{
     background-color: #fff;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
     display: grid;
     justify-items: start;
     grid-row-gap: 10px;
-    grid-template-columns: auto 100%;
+    grid-template-columns: 1fr 6fr;
     align-items: center;
     grid-template-areas: "avatar name" "score score" "profile profile";
   }
