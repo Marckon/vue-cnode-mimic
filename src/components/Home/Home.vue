@@ -36,12 +36,13 @@
 
 <style scoped>
 .home{
-  display: flex;
-  justify-content: space-around;
-  align-items: start;
-  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+  grid-template-areas: "main-sector side-sector";
+  justify-items: center;
   width:80%;
   margin: 0 auto;
+  padding-top: 20px;
 }
 @media screen and (max-width: 980px) {
   .home{

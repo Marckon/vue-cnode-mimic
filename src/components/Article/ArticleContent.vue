@@ -34,8 +34,8 @@
 
 <style>
   .article-content{
+    grid-area: article-content;
     background-color: #fff;
-    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;

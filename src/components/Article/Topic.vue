@@ -40,7 +40,11 @@
 
 <style scoped>
   .topic{
-    display: flex;
+    display: grid;
+    grid-template-columns: [col-start] 2fr [side-start] 0.5fr [col-end];
+    grid-template-rows: [row-start] auto [reply-start] auto [row-end];
+    grid-template-areas:"article-content side-sector"
+                        "article-replies side-sector";
     padding-top: 20px;
     width: 80%;
     margin:0 auto;

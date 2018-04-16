@@ -21,7 +21,8 @@
 
 <style scoped>
   .side-sector {
-    width: 250px;
+    grid-area: side-sector;
+    width: 100%;
     height: 800px;
     display: flex;
     flex-wrap: wrap;
