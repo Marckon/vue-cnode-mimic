@@ -1,5 +1,6 @@
 <template>
   <div class="side-sector">
+    <slot></slot>
     <side-login></side-login>
     <side-QRcode></side-QRcode>
   </div>
