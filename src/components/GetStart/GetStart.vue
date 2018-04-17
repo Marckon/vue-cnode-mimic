@@ -52,13 +52,13 @@
   }
 </script>
 
-<style scoped>
+<style>
 .get-start{
   width: 80%;
-  display: flex;
   margin: 20px auto;
-  justify-content: space-between;
-  align-items: start;
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+  grid-template-areas: "main-sector side-sector";
 }
   .topic_content{
     background-color: #fff;
@@ -74,5 +74,11 @@
   .topic_content a{
     color: #0088cc;
     line-height: 2rem;
+  }
+  @media screen and (max-width:980px) {
+    .get-start{
+      display: block;
+      width:90%;
+    }
   }
 </style>

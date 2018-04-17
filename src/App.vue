@@ -23,7 +23,7 @@
     },
     data(){
       return{
-        scrollY:window.scrollY
+        scrollY:window.scrollY,
       }
     },
     methods:{
@@ -48,7 +48,8 @@
         }
       }
       window.addEventListener('scroll',debounce(this.scrollMethod,500))
-    }
+    },
+
   }
 </script>
 
@@ -67,11 +68,15 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    position: absolute;
+    bottom:0;
+    top:0;
+    display: grid;
+    grid-template-rows:auto auto 60px;
   }
 
   body {
     background-color: #e1e1e1;
-
   }
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;

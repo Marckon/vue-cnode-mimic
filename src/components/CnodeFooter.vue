@@ -1,12 +1,12 @@
 <template>
-    <div class="cnode-footer">
+    <footer class="cnode-footer" >
       @刘丞哲 仿
-    </div>
+    </footer>
 </template>
 
 <script>
     export default {
-        name: "cnode-footer"
+        name: "cnode-footer",
     }
 </script>
 

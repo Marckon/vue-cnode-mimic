@@ -32,7 +32,8 @@
 
 <style scoped>
   .main-sector{
-    width:80%;
+    width:100%;
+    grid-area:main-sector
   }
   .title{
     height:40px;

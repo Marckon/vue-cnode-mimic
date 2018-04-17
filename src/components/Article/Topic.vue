@@ -106,6 +106,8 @@
   @media screen and (max-width: 980px) {
     .topic {
       width: 100%;
+      display: block;
+      width:90%;
     }
   }
 </style>
