@@ -10,6 +10,7 @@ const store = new Vuex.Store({
     currentPage: 1,
     currentTab: 'all',
     currentArticleList: [],
+    loginUser:{success:false}
   },
   mutations: {
     setCurrentPage: (state, curP) => state.currentPage = curP,
@@ -27,12 +28,21 @@ const store = new Vuex.Store({
         }
       )
     },
+    setLoginUser:(state,obj)=>{
+     /* axios.post('/accesstoken',{
+          accesstoken: accessToken
+      }).then(
+        (res)=>state.loginUser=res.data.data
+      )*/
+     state.loginUser=obj
+    }
   },
   getters: {
     getCurrentPage: (state) => state.currentPage,
     getMaxPage: (state) => state.totalPage,
     getCurrentTab: (state) => state.currentTab,
-    getCurrentArticleList: (state) => state.currentArticleList
+    getCurrentArticleList: (state) => state.currentArticleList,
+    getLoginUser:(state)=>state.loginUser
   }
 })
 
